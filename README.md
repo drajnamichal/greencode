@@ -175,12 +175,6 @@ Generate a **JSON report**:
 npx playwright test --reporter=json > report.json
 ```
 
-Send reports to **Slack** using SlackReporter.
-```ts
-import SlackReporter from 'playwright-slack-reporter';
-export default { reporter: new SlackReporter({ webhookUrl: 'your-slack-webhook-url' }) };
-```
-
 ---
 
 ### 🚀 Best Practices
