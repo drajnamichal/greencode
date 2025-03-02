@@ -4,6 +4,18 @@ import dotenv from 'dotenv';
 // Load environment variables from .env
 dotenv.config();
 
+// const gitlabToSlackMap: { [key: string]: string } = {
+//   'Michal Drajna': 'U046BMTSPCP',
+// };
+
+// function extractAuthorName(authorString: string): string {
+//   const name = authorString.split(' <')[0];
+//   return name;
+// }
+
+// const authorName = process.env.CI_COMMIT_AUTHOR ? extractAuthorName(process.env.CI_COMMIT_AUTHOR) : 'unknown';
+// const slackUserId = gitlabToSlackMap[authorName] || 'unknown';
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
