@@ -51,7 +51,7 @@ export default defineConfig({
     ]
   : [
       ['html', { open: 'on-failure' }],
-      // ['allure-playwright', { outputFolder: 'playwright-report', suiteTitle: false }],
+      ['allure-playwright'],
     ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
