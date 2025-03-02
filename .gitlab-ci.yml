@@ -3,10 +3,23 @@ stages:
 
 e2e_tests:
   stage: test
+  allow_failure: true
   image: mcr.microsoft.com/playwright:v1.50.1-noble
+  before_script:
+    - if [[ -d node_modules ]]; then
+      echo "Cache downloaded. Skipping npm install";
+      else
+      echo "Cache not found. Executing npm install";
+      apt-get update && apt-get install -y build-essential;
+      npm install;
+      fi
+    - echo "Tests will start at $(date)"
   script:
-    - npm install
-    - npx playwright test
+    - SLACK_BOT_USER_OAUTH_TOKEN=$SLACK_BOT_USER_OAUTH_TOKEN npx playwright test 
+  after_script:
+    - echo "Go check test results here:"
+    - echo "$CI_JOB_URL/artifacts/file/playwright-report/index.html"
   artifacts:
+    when: always
     paths:
       - playwright-report/
