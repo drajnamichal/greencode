@@ -1,0 +1,12 @@
+stages:
+  - test
+
+e2e_tests:
+  stage: test
+  image: mcr.microsoft.com/playwright:v1.50.1-noble
+  script:
+    - npm install
+    - npx playwright test
+  artifacts:
+    paths:
+      - playwright-report/
