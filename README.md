@@ -4,8 +4,8 @@
 
 1. **Clone the repository**:
    ```sh
-   git clone <repo-url>
-   cd playwright-workshop
+   git clone https://github.com/drajnamichal/greencode.git
+   cd greencode
    ```
 2. **Install dependencies**:
    ```sh
