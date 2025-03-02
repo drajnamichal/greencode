@@ -1,0 +1,29 @@
+{
+  "cookies": [
+    {
+      "name": "session-username",
+      "value": "standard_user",
+      "domain": "www.saucedemo.com",
+      "path": "/",
+      "expires": 1740937288,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.saucedemo.com",
+      "localStorage": [
+        {
+          "name": "backtrace-guid",
+          "value": "8e3cf0c2-0ee9-40c5-a45b-3094e26dab1e"
+        },
+        {
+          "name": "backtrace-last-active",
+          "value": "1740936688321"
+        }
+      ]
+    }
+  ]
+}
