@@ -7,7 +7,8 @@
     "prodTests": "ENV=prod playwright test",
     "localTests": "ENV=local playwright test",
     "test:api": "playwright test --config=api.config.ts --project=chromium --grep=@api",
-    "allure report": "allure serve allure-results"
+    "allure_report": "allure serve allure-results",
+    "performance:tests": "artillery run artillery-playwright.yml"
   },
   "keywords": [
     "playwright",
@@ -23,10 +24,10 @@
   },
   "dependencies": {
     "@axe-core/playwright": "^4.10.1",
-    "@scalewright/test": "^1.37.1-1",
     "@typescript-eslint/eslint-plugin": "^8.25.0",
     "allure-commandline": "^2.32.2",
     "allure-playwright": "^3.2.0",
+    "axe-playwright": "^2.1.0",
     "dotenv": "^16.4.7",
     "eslint": "^9.21.0",
     "faker": "^6.6.6",

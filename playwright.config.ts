@@ -64,6 +64,7 @@ export default defineConfig({
   : [
       ['html', { open: 'on-failure' }],
       ['allure-playwright'],
+      // list, line, dot, json, junit
     ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -71,7 +72,7 @@ export default defineConfig({
     baseURL: process.env.E2E_BASE_URL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure',
     headless: true,
     screenshot: 'only-on-failure',
     video: process.env.CI ? 'retain-on-failure' : 'off',
