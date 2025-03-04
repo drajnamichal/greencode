@@ -15,5 +15,5 @@ test.fixme('Complex test with multiple potential failures', {
     
     await page.click('.add-to-cart-sauce-labs-bacpack');
     
-    await expect(page.locator('.shopping_cart_badge')).toHaveText(‚2‘);
+    await expect(page.locator('.shopping_cart_badge')).toHaveText('2');
 });
