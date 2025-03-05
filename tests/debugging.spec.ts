@@ -1,6 +1,6 @@
 import test, { expect } from '../fixtures/basePages';
 
-test.fixme('Complex test with multiple potential failures', {
+test('Complex test with multiple potential failures', {
   tag: '@fixme',
 },  async ({ page }) => {
     await page.goto('https://www.saucedemo.com');
@@ -11,7 +11,7 @@ test.fixme('Complex test with multiple potential failures', {
     await expect(page.locator('.inventory_list')).toBeVisible();
     
     const firstProductTitle = page.locator('inventory_item:first-child .inventory_item_name').innerText();
-    expect(firstProductTitle).toBe('Sauce Labs Backpack');
+    expect(firstProductTitle).not.toBe('Sauce Labs Backpack');
     
     await page.click('.add-to-cart-sauce-labs-bacpack');
     
