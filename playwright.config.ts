@@ -1,8 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import dotenv from 'dotenv';
-
-// Load environment variables from .env
-dotenv.config();
+import { Config } from "./config";
 
 // const gitlabToSlackMap: { [key: string]: string } = {
 //   'Michal Drajna': 'U046BMTSPCP',
@@ -29,6 +26,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
+  captureGitInfo: { commit: true, diff: true },
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI
   ? [
@@ -69,11 +67,11 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: process.env.E2E_BASE_URL,
+    baseURL: Config.E2E_TEST_BASE_URL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
-    headless: true,
+    headless: Config.HEADLESS_BROWSER,
     screenshot: 'only-on-failure',
     video: process.env.CI ? 'retain-on-failure' : 'off',
     // locale: 'cs-CZ',
