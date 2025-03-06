@@ -56,6 +56,7 @@ export default defineConfig({
       //     ],
       //   },
       // ],
+      ['blob'],
       ['html'],
       ['list'],
     ]
