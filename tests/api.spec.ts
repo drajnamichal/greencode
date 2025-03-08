@@ -44,7 +44,7 @@ test('GET - Measure API response time', async ({ request }) => {
   const response = await request.get(`${BASE_URL}/posts`);
   expect(response.ok()).toBeTruthy();
   const duration = Date.now() - startTime;
-  console.log(`Response time: ${duration}ms`);
+  // console.log(`Response time: ${duration}ms`);
   expect(duration).toBeLessThan(500); // Expect API to respond within 500ms
 });
 
