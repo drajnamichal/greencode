@@ -5,6 +5,11 @@ on:
   pull_request:
     branches: [ main, master ]
 jobs:
+  check-runners:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show available runners
+        run: echo "Runner name: $GITHUB_RUNNER_NAME, Group: $GITHUB_RUNNER_GROUP"
   playwright-tests:
     timeout-minutes: 60
     runs-on: ubuntu-latest
