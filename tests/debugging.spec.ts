@@ -1,7 +1,7 @@
 import test, { expect } from '../fixtures/basePages';
 
-test.fixme('Complex test with multiple potential failures', {
-  tag: '@fixme',
+test('Complex test with multiple potential failures', {
+  tag: '@debug',
 },  async ({ page }) => {
     await page.goto('https://www.saucedemo.com');
     await page.fill('#user-name', 'standard_user');

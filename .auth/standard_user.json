@@ -5,7 +5,7 @@
       "value": "standard_user",
       "domain": "www.saucedemo.com",
       "path": "/",
-      "expires": 1741448428,
+      "expires": 1741455772,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -17,11 +17,11 @@
       "localStorage": [
         {
           "name": "backtrace-guid",
-          "value": "9e67e18e-caf6-4ad5-84b2-2ffac00c8cdf"
+          "value": "e51caced-bb3f-4ea7-bb41-0534e7c0e8b7"
         },
         {
           "name": "backtrace-last-active",
-          "value": "1741447828563"
+          "value": "1741455172354"
         }
       ]
     }

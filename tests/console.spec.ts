@@ -2,7 +2,7 @@ import test, { expect } from '../fixtures/basePages';
 
 test.describe('Console log errors', () => {
 
-  test.fixme('Page has no errors or logs', async ({ page }) => {
+  test('Page has no errors or logs', async ({ page }) => {
     page.on('console', (message) => {
       // Zachytí všetky správy z konzoly
       console.log(message.type(), message.text());
