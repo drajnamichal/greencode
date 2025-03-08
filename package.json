@@ -34,6 +34,7 @@
     "joi": "^17.13.3",
     "playwright-cli-select": "^1.0.6",
     "playwright-slack-report": "^1.1.89",
+    "pw-api-plugin": "^1.1.1",
     "typescript": "^5.7.3"
   }
 }

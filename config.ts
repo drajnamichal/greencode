@@ -30,9 +30,9 @@ if (envVars.error) {
 
 // Config class with validated environment variables
 export class Config {
-  static readonly E2E_TEST_BASE_URL: string = envVars.value.BASE_URL;
-  static readonly E2E_TEST_STANDARD_USER: string = envVars.value.USER_NAME;
-  static readonly E2E_TEST_VALID_USER_PASSWORD: string = envVars.value.PASSWORD;
+  static readonly E2E_TEST_BASE_URL: string = envVars.value.E2E_TEST_BASE_URL;
+  static readonly E2E_TEST_STANDARD_USER: string = envVars.value.E2E_TEST_STANDARD_USER;
+  static readonly E2E_TEST_VALID_USER_PASSWORD: string = envVars.value.E2E_TEST_VALID_USER_PASSWORD;
 
   static readonly WORKERS: number = envVars.value.WORKERS;
   static readonly RETRY_FAILED: number = envVars.value.RETRY_FAILED;

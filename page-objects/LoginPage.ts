@@ -13,9 +13,9 @@ export class LoginPage {
   // init selectors using constructor
   constructor(page: Page) {
     this.page = page;
-    this.userNameInput = page.getByTestId('signInUsername');
-    this.passwordInput = page.getByTestId('signInPassword');
-    this.loginButton = page.getByTestId('signInConfirmButton');
+    this.userNameInput = page.locator('#user-name');
+    this.passwordInput = page.locator('#password');
+    this.loginButton = page.locator('#login-button');
   }
 
   // define login page methods
@@ -33,7 +33,7 @@ export class LoginPage {
   }
 
   async successfulLogin() {
-    await this.userNameInput.pressSequentially(process.env.E2E_TEST_VALID_USER_EMAIL!, { delay: 100 });
+    await this.userNameInput.pressSequentially(process.env.E2E_TEST_STANDARD_USER!, { delay: 100 });
     await this.passwordInput.fill(process.env.E2E_TEST_VALID_USER_PASSWORD!);
     await this.loginButton.click();
   }
