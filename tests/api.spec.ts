@@ -72,4 +72,3 @@ test('GET - Mock response for specific post', async ({ page }) => {
   expect(body.title).toBe('Mocked Post');
   expect(body.body).toBe('Mocked content');
 });
-
