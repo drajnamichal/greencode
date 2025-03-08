@@ -59,7 +59,7 @@ test('GET - Validate email format', async ({ request }) => {
 });
 
 // API mocking
-test('GET - Mock response for specific post', async ({ page }) => {
+test('GET - Mock response for specific post',{ tag: '@mocking' }, async ({ page }) => {
   await page.route(`${BASE_URL}/posts/1`, async route => {
     const json = { id: 1, title: 'Mocked Post', body: 'Mocked content', userId: 1 };
     await route.fulfill({ json });

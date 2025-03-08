@@ -66,9 +66,9 @@ export default defineConfig({
     ],
   use: {
     baseURL: Config.E2E_TEST_BASE_URL,
-    trace: 'on',
     headless: Config.HEADLESS_BROWSER,
     screenshot: 'only-on-failure',
+    trace: 'on',
     video: process.env.CI ? 'retain-on-failure' : 'off',
     // locale: 'cs-CZ',
     // actionTimeout: 0,
