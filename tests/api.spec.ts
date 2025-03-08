@@ -52,7 +52,6 @@ test('GET - Validate email format', async ({ request }) => {
   const response = await request.get(`${BASE_URL}/users`);
   expect(response.ok()).toBeTruthy();
   const body = await response.json();
-  console.log(body);
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   body.forEach(user => {
     expect(emailRegex.test(user.email)).toBeTruthy();
