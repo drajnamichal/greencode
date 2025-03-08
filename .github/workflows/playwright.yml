@@ -5,14 +5,6 @@ on:
   pull_request:
     branches: [ main, master ]
 jobs:
-  check-runners:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get available runners
-        run: |
-          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-               -H "Accept: application/vnd.github.v3+json" \
-               "https://api.github.com/repos/${{ github.repository }}/actions/runners" | jq '.total_count'
   playwright-tests:
     timeout-minutes: 60
     runs-on: ubuntu-latest
