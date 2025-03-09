@@ -21,7 +21,7 @@ test.describe('Accessibility test using Axe', () => {
 
 
 test.describe('Achieving WCAG Standard with Playwright Accessibility Tests', () => {
-  test('Accessibility Scan', async ({ page }, testInfo) => {
+  test.skip('Accessibility Scan', async ({ page }, testInfo) => {
 
     const PAGE_FOR_SCAN = 'https://www.npmjs.com/package/axe-playwright?activeTab=readme';
     

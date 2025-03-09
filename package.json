@@ -8,7 +8,12 @@
     "localTests": "ENV=local playwright test",
     "test:api": "playwright test --config=api.config.ts --project=chromium --grep=@api",
     "allure_report": "allure serve allure-results",
-    "performance:tests": "artillery run artillery-playwright.yml"
+    "test:performance": "artillery run artillery-playwright.yml",
+    "ui-mode": "npx playwright test --ui",
+    "debug": "npx playwright test --debug",
+    "update": " npm install -D @playwright/test@latest && npx playwright install --with-deps",
+    "version": "npx playwright --version",
+    "codegen": "npx playwright codegen"
   },
   "keywords": [
     "playwright",

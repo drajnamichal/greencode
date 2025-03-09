@@ -1,0 +1,11 @@
+Mac/Linux:
+Počet jadier zistíš príkazom: sysctl -n hw.ncpu
+
+Príkaz na spustenie testov:
+for i in `seq <min> <max>`; do time npx playwright test --reporter=line --workers=$i; done
+---------------------------------------------------------------------------------------------------------------------
+Windows:
+Počet jadier zistíš príkazom: Get-WmiObject Win32_Processor | Select-Object -ExpandProperty NumberOfLogicalProcessors
+
+Príkaz na spustenie testov:
+for ($i = <min>; $i -le <max>; $i++) { Measure-Command { npx playwright test --reporter=line --workers=$i } }

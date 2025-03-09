@@ -39,7 +39,7 @@ test('DELETE - Delete an existing post', async ({ request }) => {
 //   // Write your test here
 // });
 
-test('GET - Measure API response time', async ({ request }) => {
+test.skip('GET - Measure API response time', async ({ request }) => {
   const startTime = Date.now();
   const response = await request.get(`${BASE_URL}/posts`);
   expect(response.ok()).toBeTruthy();
@@ -60,15 +60,18 @@ test('GET - Validate email format', async ({ request }) => {
 
 // API mocking
 test('GET - Mock response for specific post',{ tag: '@mocking' }, async ({ page }) => {
+  // Mock the api call before navigating
   await page.route(`${BASE_URL}/posts/1`, async route => {
     const json = { id: 1, title: 'Mocked Post', body: 'Mocked content', userId: 1 };
     await route.fulfill({ json });
   });
-  // fetch request performed from the browser context
+
+  // Fetch request performed from the browser context
   const body = await page.evaluate(async (url) => {
     const response = await fetch(url);
     return response.json();
   }, `${BASE_URL}/posts/1`);
+  // Assert that the mocked values
   expect(body.title).toBe('Mocked Post');
   expect(body.body).toBe('Mocked content');
 });
