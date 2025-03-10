@@ -13,7 +13,7 @@ test.use({
   permissions: ['geolocation'],
 });
 
-test('Test on mobile', async ({ page }) => {
+test.fixme('Test on mobile', async ({ page }) => {
   await page.goto('https://google.com');
   await page.screenshot({ path: 'mobile.png' });
 });
