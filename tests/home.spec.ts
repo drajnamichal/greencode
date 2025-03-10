@@ -3,7 +3,7 @@ import test, { expect } from '../fixtures/basePages';
 // test with test steps, annotations, and tags
 
 test.describe('Home page', () => {
-  test('home page test',
+  test.only('home page test',
     {
       annotation: [{ type: 'Test', description: 'This test uses storage state and saved cookies, so there is no need to login.' }],
       tag: ['@web'],

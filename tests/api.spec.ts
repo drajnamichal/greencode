@@ -24,27 +24,44 @@ test('POST - Create a new post', async ({ request }) => {
   expect(body.title).toBe('Test post');
 });
 
-// Placeholder for PUT API test
-// test('PUT - Update an existing post', async ({ request }) => {
-//   // Write your PUT API test here
-// });
+
+test('PUT - Update an existing post', async ({ request }) => {
+  const updatedData = {
+    id: 1,
+    title: 'Updated Post Title',
+    body: 'Updated Post Content',
+    userId: 1,
+  };
+  const response = await request.put(`${BASE_URL}/posts/1`, {
+    data: updatedData,
+  });
+  expect(response.ok()).toBeTruthy();
+  const body = await response.json();
+  expect(body.id).toBe(updatedData.id);
+  expect(body.title).toBe(updatedData.title);
+  expect(body.body).toBe(updatedData.body);
+  expect(body.userId).toBe(updatedData.userId);
+});
 
 test('DELETE - Delete an existing post', async ({ request }) => {
   const response = await request.delete(`${BASE_URL}/posts/1`);
   expect(response.status()).toBe(200);
 });
 
-// Placeholder for getting non-existent post API test
-// test('GET - Handle non-existent post', async ({ request }) => {
-//   // Write your test here
-// });
+test('GET - Handle non-existent post', async ({ request }) => {
+  const response = await request.get(`${BASE_URL}/posts/9999`);
+  expect(response.status()).toBe(404);
+  const body = await response.json();
+  expect(body).toEqual({}); // Expect an empty object or valid error response
+});
 
-test.skip('GET - Measure API response time', async ({ request }) => {
+
+test('GET - Measure API response time', async ({ request }) => {
   const startTime = Date.now();
   const response = await request.get(`${BASE_URL}/posts`);
   expect(response.ok()).toBeTruthy();
   const duration = Date.now() - startTime;
-  // console.log(`Response time: ${duration}ms`);
+  console.log(`Response time: ${duration}ms`);
   expect(duration).toBeLessThan(500); // Expect API to respond within 500ms
 });
 

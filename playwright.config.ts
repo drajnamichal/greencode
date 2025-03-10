@@ -68,7 +68,7 @@ export default defineConfig({
     baseURL: Config.E2E_TEST_BASE_URL,
     headless: Config.HEADLESS_BROWSER,
     screenshot: 'only-on-failure',
-    trace: 'on',
+    trace: 'retain-on-failure',
     video: process.env.CI ? 'retain-on-failure' : 'off',
     // locale: 'cs-CZ',
     // actionTimeout: 0,
@@ -104,8 +104,8 @@ export default defineConfig({
 
     /* Test against mobile viewports. */
     // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
+    //   name: 'mobile',
+    //   use: { ...devices['Blackberry PlayBook'] },
     // },
     // {
     //   name: 'Mobile Safari',
